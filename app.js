@@ -28,7 +28,7 @@ app.use('/bower_components', express.static(path.join(__dirname, 'bower_componen
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/login',login);
+app.use('/login', login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
