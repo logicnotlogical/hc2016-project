@@ -6,7 +6,15 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var exphbs = require('express-handlebars');
-var routes = require('./routes/index');
+exphbs.registerHelper('ifEq', function(v1, v2, options)
+{
+   if (v1 == v2)
+   {
+       return options.fn(this);
+   }
+   return options.inverse(this);
+});
+var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
 
@@ -26,7 +34,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 
-app.use('/', routes);
+app.use('/', index);
 app.use('/users', users);
 app.use('/login', login);
 

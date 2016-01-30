@@ -12,7 +12,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-        <li class="active"><a href="/">Home</a></li>
+        <li {{#ifEq title 'Home'}} class="active"{{/ifEq}}><a href="/">Home</a></li>
         <li><a href="/login">Login</a></li>
         <li><a href="#">Start Chat</a></li>
     </ul>
