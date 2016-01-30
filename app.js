@@ -6,14 +6,22 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var exphbs = require('express-handlebars');
-exphbs.registerHelper('ifEq', function(v1, v2, options)
-{
-   if (v1 == v2)
-   {
-       return options.fn(this);
-   }
-   return options.inverse(this);
-});
+var hbs = exphbs.create(
+    {
+       helpers:
+       {
+           ifEq: function(v1, v2, options)
+           {
+               if (v1 == v2)
+                return options.fn(this);
+               return options.inverse(this);
+           }
+       },
+       defaultLayout: 'single',
+       extname: '.hbs' 
+    }
+);
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
@@ -22,8 +30,14 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.engine('.hbs', exphbs({defaultLayout: 'single', extname: '.hbs'}));
-app.set('view engine', '.hbs');
+
+// New setup for handlebars to register the new handler for ifEq
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+
+// app.engine('.hbs', exphbs({defaultLayout: 'single', extname: '.hbs'}));
+// app.set('view engine', '.hbs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
