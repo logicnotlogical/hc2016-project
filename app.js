@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var exphbs = require('express-handlebars');
-exphbs.registerHelper('ifEq', function(v1, v2, options)
+Handlebars.registerHelper('ifEq', function(v1, v2, options)
 {
    if (v1 == v2)
    {
