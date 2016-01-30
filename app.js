@@ -35,8 +35,9 @@ app.set('views', path.join(__dirname, 'views'));
 // app.engine('handlebars', hbs.engine);
 // app.set('view engine', 'handlebars');
 
+app.engine('.hbs', hbs({defaultLayout: 'single', extname: '.hbs'}));
 // app.engine('.hbs', exphbs({defaultLayout: 'single', extname: '.hbs'}));
-app.engine('.hbs', hbs);
+// app.engine('.hbs', hbs);
 app.set('view engine', '.hbs');
 
 // uncomment after placing your favicon in /public
