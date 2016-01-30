@@ -32,11 +32,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 
 // New setup for handlebars to register the new handler for ifEq
-// app.engine('handlebars', hbs.engine);
-// app.set('view engine', 'handlebars');
 
-// app.engine('.hbs', hbs({defaultLayout: 'single', extname: '.hbs'}));
-// app.engine('.hbs', exphbs({defaultLayout: 'single', extname: '.hbs'}));
 app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');
 
