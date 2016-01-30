@@ -6,14 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var exphbs = require('express-handlebars');
-Handlebars.registerHelper('ifEq', function(v1, v2, options)
-{
-   if (v1 == v2)
-   {
-       return options.fn(this);
-   }
-   return options.inverse(this);
-});
+// Handlebars.registerHelper('ifEq', function(v1, v2, options)
+// {
+//    if (v1 == v2)
+//    {
+//        return options.fn(this);
+//    }
+//    return options.inverse(this);
+// });
 var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
