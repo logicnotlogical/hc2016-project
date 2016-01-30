@@ -18,13 +18,14 @@ var hbs = exphbs.create(
            }
        },
        defaultLayout: 'single',
-       extname: '.hbs' 
+       extname: '.hbs'
     }
 );
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
+var signup = require('./routes/signup');
 
 var app = express();
 
@@ -47,6 +48,7 @@ app.use('/bower_components', express.static(path.join(__dirname, 'bower_componen
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/signup',signup);
 app.use('/login', login);
 
 // catch 404 and forward to error handler
