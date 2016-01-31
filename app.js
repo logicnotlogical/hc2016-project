@@ -22,10 +22,7 @@ var hbs = exphbs.create(
     }
 );
 
-var index = require('./routes/index');
-var login = require('./routes/login');
-var users = require('./routes/users');
-var signup = require('./routes/signup');
+var routes = require('./routes/routes.js');
 
 var app = express();
 
@@ -46,10 +43,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 
-app.use('/', index);
-app.use('/login', login);
-app.use('/users', users);
-app.use('/signup', signup);
+app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
