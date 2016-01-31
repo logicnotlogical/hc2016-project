@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// custom stuffs.
+var chat = require('./chat');
+
 var exphbs = require('express-handlebars');
 var hbs = exphbs.create(
     {
@@ -22,9 +25,16 @@ var hbs = exphbs.create(
     }
 );
 
+// yolo
+
 var routes = require('./routes/routes.js');
 
 var app = express();
+
+// socket.io
+var io = require('socket.io')(app);
+
+io.on('connection', chat.connection());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
