@@ -22,4 +22,8 @@ router.get('/users', function(req, res, next) {
   res.send('respond with a resource'); // TODO: make this point at a resource
 });
 
+router.get('/chat', function(req, res, next) {
+    res.render('chat', { title: 'Chat' });
+});
+
 module.exports = router;
