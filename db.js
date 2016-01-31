@@ -33,11 +33,15 @@ function login(username, password)
 
 function signup(user, callback) {
     // check that the required fields are present.
-    if (user.username != null && user.password != null && user.email != null && user.firstName != null) {
+    if (user.username != null && user.password != null && user.email != null && user.firstName != null && user.lastName != null) {
         var language = user.language : "en"; // defaults to english.
         bcrypt.genSalt = (10, function(err, salt) {
             bcrypt.hash(user.password, 8, function(err, hash) {
-                db.run("INSERT INTO users (Email, FirstName, 
+                db.run("INSERT INTO users (Email, FirstName, LastName, PasswordHash) VALUES ("+user.email+", "+user.firstName+", "+user.lastName+", "+hash+");", function() {
+                    callback(true);
+                });
+            });
+        });
     }
     else callback(false);
 };
