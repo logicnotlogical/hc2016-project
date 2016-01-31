@@ -10,7 +10,7 @@ $('.chat-form').submit(function () {
 var b = true;
 socket.on('connect', function() {
     if (b) {
-        var user = prompt("Enter your name:");
+        //var user = prompt("Enter your name:");
          socket.emit('join', user);
          b=false;
     }
