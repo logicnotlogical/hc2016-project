@@ -12,9 +12,10 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
-        <li {{#ifEq title 'Home'}} class="active"{{/ifEq}}><a href="/">Home</a></li>
-        <li><a href="/login" {{#ifEq title 'Login'}} class="active"{{/ifEq}}>Login</a></li>
-        <li><a href="/chat" {{#ifEq title 'Chat'}} class="active"{{/ifEq}}>Start Chat</a></li>
+        <li{{#ifEq title 'Home'}} class="active"{{/ifEq}}><a href="/">Home</a></li>
+        <li{{#ifEq title 'Login'}} class="active"{{/ifEq}}><a href="/login">Login</a></li>
+        <li{{#ifEq title 'Sign Up'}} class="active"{{/ifEq}}><a href="/signup">Sign Up</a></li>
+        <li{{#ifEq title 'Chat'}} class="active"{{/ifEq}}><a href="/chat">Start Chat</a></li>
     </ul>
     </div><!--/.nav-collapse -->
 </div><!--/.container-fluid -->
