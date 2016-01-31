@@ -5,6 +5,7 @@ var https = require('https');
 var apiKeys = JSON.parse(fs.readFileSync(path.join(__dirname + '/api_keys.json'), 'utf8'));
 
 var getJSONFromURL = function(url, callback) {
+    console.log("Getting "+url);
     https.get(url, function(response) {
         var data = '';
 
