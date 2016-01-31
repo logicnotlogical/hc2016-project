@@ -35,17 +35,17 @@ var io = require('socket.io')(server);
 
 io.on('connection', function(socket) {
     socket.on("join", function(name) {
-        people[client.id] = name;
-        client.emit("update", "you have connected to the server");
-        socket.sockets.emit("update", name + " has joined the server.");
+        people[socket.id] = name;
+        socket.emit("update", "you have connected to the server");
+        socket.emit("update", name + " has joined the server.");
     });
 
     socket.on("send", function(msg) {
-        socket.sockets.emit("chat", { 'user': people[socket.id], 'msg': msg});
+        socket.emit("chat", { 'user': people[socket.id], 'msg': msg});
     });
 
     socket.on("disconnect", function() {
-        socket.sockets.emit("update", people[socket.id] + " has left the server");
+        socket.emit("update", people[socket.id] + " has left the server");
         delete people[socket.id];
     });
 });
