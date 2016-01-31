@@ -14,7 +14,7 @@ function login(username, password)
     		password = hash;
     	});
     });
-    db.run()
+    db.run("INSERT INTO lingualmingle(col1, col2) VALUES (password, username)"); //not sure if this is correct(it's meant to be the insert function)
 }
 
 module.exports = {
