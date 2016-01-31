@@ -28,7 +28,7 @@ var getJSONFromURL = function(url, callback) {
 
 var translateText = function(text, lang) {
     getJSONFromURL("https://www.googleapis.com/language/translate/v2?key="+apiKeys.gtranslate+"&target="+lang+"&q="+encodeURIComponent(text), function(data) {
-        return {};
+        return data;
     });
 };
 
