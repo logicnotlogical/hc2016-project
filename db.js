@@ -37,7 +37,9 @@ function signup(user, callback) {
         var language = user.language : "en"; // defaults to english.
         bcrypt.genSalt = (10, function(err, salt) {
             bcrypt.hash(user.password, 8, function(err, hash) {
-                db.run("INSERT INTO users (Email, FirstName, LastName, PasswordHash) VALUES ("+user.email+", "+user.firstName+", "+user.lastName+", "+hash+");");
+                db.run("INSERT INTO users (Email, FirstName, LastName, PasswordHash) VALUES ("+user.email+", "+user.firstName+", "+user.lastName+", "+hash+");", function() {
+                    callback(true);
+                });
             });
         });
     }
