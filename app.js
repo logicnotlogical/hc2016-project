@@ -14,7 +14,7 @@ var hbs = exphbs.create(
        {
            ifEq: function(v1, v2, options)
            {
-               if (v1 == v2)
+               if (v1.toLower() == v2.toLower())
                 return options.fn(this);
                return options.inverse(this);
            }
