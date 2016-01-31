@@ -16,6 +16,19 @@ var dbConnect = function (callback) {
     });
 }
 
+var userSchema = mongoose.Schema
+(
+    {
+        password    : String,
+        firstName   : String,
+        lastName    : String,
+        email       : String,
+        reputation  : Number,
+        averageSentiment: Number,
+        chatCount   : Number
+    }
+);
+
 module.exports = {
     dbConnect : dbConnect
 }

@@ -1,6 +1,23 @@
 <div class="container">
-    <div class="jumbotron">
-        <h3>Welcome to</h3><br>
-        <h1>{{>variables/SITE_NAME}}</h1>
+    <div class="panel panel-default">
+        <div class="panel-body chat-container">
+            <!-- messages go here -->
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Message..." id="msg-text">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" id="msg-send"><span class="glyphicon glyphicon-send" aria-hidden="true"></span> Send</button>
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+var socket = io();
+
+
+</script>
