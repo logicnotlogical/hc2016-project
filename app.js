@@ -50,6 +50,22 @@ app.use('/bower_components', express.static(path.join(__dirname, 'bower_componen
 
 app.use('/', routes);
 
+app.post('/', function(request, response)
+{
+    if (typeof request.action != 'undefined' && request.action)
+    {
+        switch(request.action)
+        {
+            case 'login':
+                // Login code
+                break;
+            case 'signup':
+                // Signup code
+                break;
+        }
+    }
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
