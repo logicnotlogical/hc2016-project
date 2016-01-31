@@ -31,7 +31,8 @@ var routes = require('./routes/routes.js');
 var app = express();
 
 var mongo = require('./db.js');
-mongo.dbConnect();
+mongo.dbConnect(function() {
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
