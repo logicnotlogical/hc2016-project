@@ -30,6 +30,8 @@ var routes = require('./routes/routes.js');
 
 var app = express();
 
+// db
+// var db = require('./db.js');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -49,6 +51,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 
 app.use('/', routes);
+
+app.post('/', function(request, response)
+{
+    if (typeof request.action != 'undefined' && request.action)
+    {
+        switch(request.action)
+        {
+            case 'login':
+                // Login code
+                // Username: request.action.login.username
+                // Password: request.action.login.password
+                break;
+            case 'signup':
+                // Signup code
+                // First Name: request.action.signup.firstName
+                // Last Name: request.action.signup.lastName
+                // Email: request.action.signup.email
+                // Password: request.action.signup.password
+                break;
+        }
+    }
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -83,3 +107,4 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+//random comment to confused TF out of everyone

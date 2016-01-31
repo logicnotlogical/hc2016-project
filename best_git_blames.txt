@@ -1,0 +1,8 @@
+574b2835 (Matthew Bell        2016-01-31 01:42:51 +0000  27) // yolo
+15a71d42 (chilichilimo        2016-01-31 02:46:36 +0000  6)     <div class="col-sm-9">
+15a71d42 (chilichilimo        2016-01-31 02:46:36 +0000  7)       <div class="jumbotron">
+15a71d42 (chilichilimo        2016-01-31 02:46:36 +0000  8)       <h2>What is LinguelMingle?<h2>
+15a71d42 (chilichilimo        2016-01-31 02:46:36 +0000  9)         <p>This is where we have to write about the app</p>
+15a71d42 (chilichilimo        2016-01-31 02:46:36 +0000 10)       </div>
+15a71d42 (chilichilimo        2016-01-31 02:46:36 +0000 11)     </div>
+15a71d42 (chilichilimo        2016-01-31 02:46:36 +0000 12) </div>

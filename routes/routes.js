@@ -22,6 +22,7 @@ router.get('/users', function(req, res, next) {
   res.send('respond with a resource'); // TODO: make this point at a resource
 });
 
+/* GET chat page */
 router.get('/chat', function(req, res, next) {
     res.render('chat', { title: 'Chat' });
 });
