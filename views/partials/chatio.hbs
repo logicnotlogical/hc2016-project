@@ -7,6 +7,11 @@ $('#msg-send').click(function () {
     $('#msg-text').val('');
 });
 
+socket.on('connect', function() {
+    var user = prompt("Enter your name:");
+    socket.emit('join', user);
+});
+
 socket.on('chat', function(data) {
     $('.chat-container').append('<p><strong>'+data.user+'</strong> '+data.msg+'</p>');
 });
