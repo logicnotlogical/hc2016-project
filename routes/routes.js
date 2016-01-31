@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var requests = require('../requests.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -25,6 +26,10 @@ router.get('/users', function(req, res, next) {
 /* GET chat page */
 router.get('/chat', function(req, res, next) {
     res.render('chat', { title: 'Chat' });
+});
+
+router.get('/translate', function(req,res,next) {
+    res.send(requests.translateText(req.query.text,req.query.lang));
 });
 
 module.exports = router;
