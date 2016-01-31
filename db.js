@@ -17,6 +17,13 @@ function login(username, password)
     db.run("INSERT INTO lingualmingle(col1, col2) VALUES (password, username)"); //not sure if this is correct(it's meant to be the insert function)
 }
 
+function signup(user, callback) {
+    if (user.username != null && user.password != null && user.email != null) {
+        
+    }
+    else callback(false);
+};
+
 module.exports = {
     login : login
 };
