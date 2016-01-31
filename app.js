@@ -22,6 +22,8 @@ var hbs = exphbs.create(
     }
 );
 
+// yolo
+
 var routes = require('./routes/routes.js');
 
 var app = express();
