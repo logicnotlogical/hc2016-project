@@ -21,4 +21,5 @@ router.get('/signup', function(req, res, next) {
 router.get('/users', function(req, res, next) {
   res.send('respond with a resource'); // TODO: make this point at a resource
 });
+
 module.exports = router;

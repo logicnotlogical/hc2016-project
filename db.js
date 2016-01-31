@@ -13,7 +13,7 @@ var dbConnect = function (callback) {
     });
     db.once('open', function() {
         callback({status: "success"});
-    };
+    });
 }
 
 module.exports = {

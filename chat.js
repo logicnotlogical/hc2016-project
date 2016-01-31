@@ -19,7 +19,7 @@ socket.on("connection", function(client)
 
 	client.on("disconnect", function()
 	{
-		socket.sockets.emit("update ", people[client.id] + "has left the server");
+		socket.sockets.emit("update ", people[client.id] + " has left the server");
 		delete people[client.id];
 	});
 
