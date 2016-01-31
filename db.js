@@ -3,6 +3,20 @@
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('lingualmingle.sqlite');
 var check;
+var username;
+var password;
+
+var express = require("express");
+
+app.post('/', function(req, res)
+{
+	res.send('username:' + req.body.username);
+	res.send('password:' + req.body.password);
+
+	 username = req.body.username;
+	 password = req.body.password;
+}
+
 
 function login(username, password)
 {
