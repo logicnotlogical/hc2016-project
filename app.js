@@ -30,6 +30,8 @@ var routes = require('./routes/routes.js');
 
 var app = express();
 
+var mongo = require('./db.js');
+mongo.dbConnect();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -58,9 +60,15 @@ app.post('/', function(request, response)
         {
             case 'login':
                 // Login code
+                // Username: request.action.login.username
+                // Password: request.action.login.password
                 break;
             case 'signup':
                 // Signup code
+                // First Name: request.action.signup.firstName
+                // Last Name: request.action.signup.lastName
+                // Email: request.action.signup.email
+                // Password: request.action.signup.password
                 break;
         }
     }
