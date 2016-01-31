@@ -1,0 +1,22 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+var socket = io();
+
+$('.chat-form').submit(function () {
+    socket.emit('send', $('#msg-text').val());
+    $('#msg-text').val('');
+    return false;
+});
+var b = true;
+socket.on('connect', function() {
+    if (b) {
+        var user = prompt("Enter your name:");
+         socket.emit('join', user);
+         b=false;
+    }
+});
+
+socket.on('chat', function(data) {
+    $('.chat-container').append('<p><strong>'+data.user+'</strong> '+data.msg+'</p>');
+});
+</script>
